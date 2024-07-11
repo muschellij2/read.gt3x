@@ -416,9 +416,8 @@ as.data.frame.activity <- function(x, ..., verbose = FALSE,
 #' @rdname print
 print.activity_df <- function(x, ...) {
 
-  old <- options()         # code line i
-  on.exit(options(old))    # code line i+1
-  options(digits = 15L, digits.secs = 3L)
+  old <- options(digits = 15L, digits.secs = 3L)     # code line i
+  on.exit(options(old))                              # code line i+1
 
   arglist <- list(...)
   if(! "n" %in% names(arglist)) {
