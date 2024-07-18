@@ -435,6 +435,8 @@ print.activity_df <- function(x, ...) {
 #' @rdname print
 #' @export
 head.activity_df <- function(x, ...) {
+  old <- options(digits = 15L, digits.secs = 3L)     # code line i
+  on.exit(options(old))                              # code line i+1
   all_attr <- attributes(x)
   nattr <- names(all_attr)
   nattr <- setdiff(nattr, c("dim", "dimnames", "names", "rownames"))
