@@ -284,7 +284,7 @@ read.gt3x <- function(path, verbose = FALSE, asDataFrame = FALSE,
 
 
   accdata <- structure(accdata,
-                       class = c("activity", class(accdata)))
+                       class = unique(c("activity", class(accdata))))
 
   if (asDataFrame)
     accdata <- as.data.frame(accdata, verbose = verbose > 1)
@@ -383,7 +383,7 @@ as.data.frame.activity <- function(x, ..., verbose = FALSE,
     message("Done")
   }
   x <- structure(x,
-                 class = c("activity_df", class(x)),
+                 class = unique(c("activity_df", class(x))),
                  subject_name = all_attributes[["subject_name"]],
                  time_zone = all_attributes[["time_zone"]],
                  missingness = all_attributes[["missingness"]])
@@ -445,7 +445,7 @@ head.activity_df <- function(x, ...) {
   for (iattr in nattr) {
     attr(x, iattr) <-  all_attr[[iattr]]
   }
-  class(x) <- c("activity_df", class(x))
+  class(x) <- unique(c("activity_df", class(x)))
 
   attr(x, "n_head") <- get_n_head(...)
   x
@@ -485,7 +485,7 @@ head.activity <- function(x, ...) {
   for (iattr in nattr) {
     attr(x, iattr) <-  all_attr[[iattr]]
   }
-  class(x) <- c("activity", class(x))
+  class(x) <- unique(c("activity", class(x)))
 
   attr(x, "n_head") <- get_n_head(...)
 
