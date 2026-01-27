@@ -442,6 +442,13 @@ NumericMatrix parseGT3X(const char* filename,
               if (debug) {
                 Rcout << "!!!Have to impute (around line 443 parseGT3X), n_missing:" << n_missing << "\n";
               }
+              if(total_records + n_missing > max_samples) {
+                n_missing = max_samples - total_records;
+                if (verbose | debug) {
+                  Rcout << "!!!n_missing adjusted to fit max_samples, new n_missing:" << n_missing << "\n";
+                }
+                Rf_warning("!!!CPP parser warning: likely overflow for imputation, reducing missing");
+              }
               ImputeZeroes(timeStamps, total_records, n_missing, sample_rate, start_time, expected_payload_start, debug);
               total_records += n_missing;
             }
