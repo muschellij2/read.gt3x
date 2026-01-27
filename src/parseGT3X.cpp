@@ -439,6 +439,9 @@ NumericMatrix parseGT3X(const char* filename,
             Missingness[patch::to_string(expected_payload_start)] = n_missing;
 
             if(impute_zeroes && !use_batching) {
+              if (debug) {
+                Rcout << "!!!Have to impute (around line 443 parseGT3X), n_missing:" << n_missing << "\n";
+              }
               ImputeZeroes(timeStamps, total_records, n_missing, sample_rate, start_time, expected_payload_start, debug);
               total_records += n_missing;
             }
@@ -462,6 +465,9 @@ NumericMatrix parseGT3X(const char* filename,
           }
           Missingness[patch::to_string(payload_start)] = sample_rate;
           if(impute_zeroes && !use_batching) {
+            if (debug) {
+              Rcout << "!!!Have to impute (around line 468 parseGT3X), total_records:" << total_records <<  ", max_samples:" << max_samples << "\n";
+            }
             ImputeZeroes(timeStamps, total_records, sample_rate, sample_rate, start_time, payload_start, debug);
             total_records += sample_rate;
           }
