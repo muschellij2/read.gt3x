@@ -136,3 +136,25 @@ testthat::test_that("read.gt3x disables imputing zeroes when using batching", {
   testthat::expect_true(nrow(gt3xdata_batch_impute) == nrow(gt3xdata_bigger_batch))
   testthat::expect_true(all(gt3xdata_bigger_batch[1:100,] == gt3xdata_batch_impute[1:100,]))
 })
+
+
+
+testthat::test_that("read.gt3x flag_idle_sleep works", {
+  data <- read.gt3x(gt3xfile, asDataFrame = TRUE, imputeZeroes=TRUE,
+                    flag_idle_sleep = TRUE)
+
+  testthat::expect_named(
+    colnames(data),
+    c("time", "X", "Y", "Z", "idle")
+    )
+  testthat::expect_true(
+    is.logical(data$idle)
+  )
+  testthat::expect_equal(
+    sum(data$idle),
+    207500L
+  )
+
+})
+
+
