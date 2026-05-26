@@ -47,9 +47,9 @@ testthat::expect_error(unzip.gt3x(c("", "")))
 
 }
 \seealso{
-Other file manipulations: 
-\code{\link{gt3x_datapath}()},
-\code{\link{is_gt3x}()},
-\code{\link{list_gt3x}()}
+Other file manipulations:
+\code{\link[=gt3x_datapath]{gt3x_datapath()}},
+\code{\link[=is_gt3x]{is_gt3x()}},
+\code{\link[=list_gt3x]{list_gt3x()}}
 }
 \concept{file manipulations}

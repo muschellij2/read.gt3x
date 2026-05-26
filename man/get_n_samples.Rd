@@ -15,8 +15,8 @@ Calculate the expected activity sample size from start time
 and last sample time in the info.txt of a gt3x directory
 }
 \seealso{
-Other gt3x-utils: 
-\code{\link{is_gt3x}()},
-\code{\link{ticks2datetime}()}
+Other gt3x-utils:
+\code{\link[=is_gt3x]{is_gt3x()}},
+\code{\link[=ticks2datetime]{ticks2datetime()}}
 }
 \concept{gt3x-utils}

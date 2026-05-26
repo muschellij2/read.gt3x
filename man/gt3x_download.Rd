@@ -20,8 +20,8 @@ file path of \code{exdir}
 Download and unzip a zipped \code{gt3x} file
 }
 \seealso{
-Other sample-data: 
-\code{\link{gt3x_dataurl}()},
-\code{\link{gt3x_url}()}
+Other sample-data:
+\code{\link[=gt3x_dataurl]{gt3x_dataurl()}},
+\code{\link[=gt3x_url]{gt3x_url()}}
 }
 \concept{sample-data}

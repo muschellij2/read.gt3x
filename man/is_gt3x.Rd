@@ -36,14 +36,14 @@ is_gt3x(NULL)
 have_log_and_info(tempfile(), verbose = TRUE)
 }
 \seealso{
-Other file manipulations: 
-\code{\link{gt3x_datapath}()},
-\code{\link{list_gt3x}()},
-\code{\link{unzip.gt3x}()}
+Other file manipulations:
+\code{\link[=gt3x_datapath]{gt3x_datapath()}},
+\code{\link[=list_gt3x]{list_gt3x()}},
+\code{\link[=unzip.gt3x]{unzip.gt3x()}}
 
-Other gt3x-utils: 
-\code{\link{get_n_samples}()},
-\code{\link{ticks2datetime}()}
+Other gt3x-utils:
+\code{\link[=get_n_samples]{get_n_samples()}},
+\code{\link[=ticks2datetime]{ticks2datetime()}}
 }
 \concept{file manipulations}
 \concept{gt3x-utils}
