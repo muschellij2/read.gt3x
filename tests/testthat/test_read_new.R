@@ -31,22 +31,7 @@ testthat::test_that("has_log_info", {
   testthat::expect_error(unzip.gt3x(tfile))
   unzip.gt3x(dirname(gt3xfile))
 })
-has_zoo <- requireNamespace("zoo", quietly = TRUE)
-fzero <- function(df) {
-  zero <- rowSums(df[, c("X", "Y", "Z")] == 0) == 3
-  names(zero) <- NULL
-  df$X[zero] <- NA
-  df$Y[zero] <- NA
-  df$Z[zero] <- NA
-  df$X <- zoo::na.locf(df$X, na.rm = FALSE)
-  df$Y <- zoo::na.locf(df$Y, na.rm = FALSE)
-  df$Z <- zoo::na.locf(df$Z, na.rm = FALSE)
-
-  df$X[is.na(df$X)] <- 0
-  df$Y[is.na(df$Y)] <- 0
-  df$Z[is.na(df$Z)] <- 0
-  df
-}
+fzero <- read.gt3x::fill_zeros
 
 testthat::test_that("read.gt3x reads the first second of data correctly", {
   testthat::expect_true({
@@ -55,7 +40,7 @@ testthat::test_that("read.gt3x reads the first second of data correctly", {
 })
 
 testthat::test_that("read.gt3x reads the fulldata correctly", {
-  if (has_zoo) {
+
     csv2 <- csvdata
     colnames(csv2) <- sub("Accelerometer ", "", colnames(csv2))
     csv2[214100:214101, ]
@@ -67,7 +52,6 @@ testthat::test_that("read.gt3x reads the fulldata correctly", {
     d <- abs(csv2 - gt3xdata_full)
     bad <- rowSums(d > 1e-8) > 0
     testthat::expect_true(!any(bad))
-  }
 })
 
 testthat::test_that("No lags in gt3x data.frame timestamps after imputation", {
