@@ -36,7 +36,6 @@ Imports:
     tools,
     vctrs
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 Suggests: 
     knitr,
     rmarkdown,
@@ -47,3 +46,4 @@ Suggests:
     lubridate,
     zip
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.0.0

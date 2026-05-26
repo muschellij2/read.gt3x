@@ -34,12 +34,8 @@ stopifnot(out == mystr)
 read.gt3x::datetime2ticks(x = as.POSIXct(Sys.time(), tz = "EST"))
 }
 \seealso{
-Other gt3x-utils: 
-\code{\link{get_n_samples}()},
-\code{\link{is_gt3x}()}
-
-Other gt3x-utils: 
-\code{\link{get_n_samples}()},
-\code{\link{is_gt3x}()}
+Other gt3x-utils:
+\code{\link[=get_n_samples]{get_n_samples()}},
+\code{\link[=is_gt3x]{is_gt3x()}}
 }
 \concept{gt3x-utils}

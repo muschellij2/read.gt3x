@@ -21,8 +21,8 @@ URL to file
 Get url of github release
 }
 \seealso{
-Other sample-data: 
-\code{\link{gt3x_download}()},
-\code{\link{gt3x_url}()}
+Other sample-data:
+\code{\link[=gt3x_download]{gt3x_download()}},
+\code{\link[=gt3x_url]{gt3x_url()}}
 }
 \concept{sample-data}

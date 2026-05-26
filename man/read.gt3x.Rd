@@ -122,9 +122,9 @@ rm(df2); gc(); gc()
 }
 }
 \seealso{
-Other gt3x-parsers: 
-\code{\link{as.data.frame.activity}()},
-\code{\link{parse_gt3x_info}()},
-\code{\link{print.gt3x_info}()}
+Other gt3x-parsers:
+\code{\link[=as.data.frame.activity]{as.data.frame.activity()}},
+\code{\link[=parse_gt3x_info]{parse_gt3x_info()}},
+\code{\link[=print.gt3x_info]{print.gt3x_info()}}
 }
 \concept{gt3x-parsers}
