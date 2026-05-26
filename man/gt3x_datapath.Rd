@@ -35,9 +35,9 @@ testthat::expect_error(gt3x_filename(100))
 testthat::expect_error(gt3x_filename(0))
 }
 \seealso{
-Other file manipulations: 
-\code{\link{is_gt3x}()},
-\code{\link{list_gt3x}()},
-\code{\link{unzip.gt3x}()}
+Other file manipulations:
+\code{\link[=is_gt3x]{is_gt3x()}},
+\code{\link[=list_gt3x]{list_gt3x()}},
+\code{\link[=unzip.gt3x]{unzip.gt3x()}}
 }
 \concept{file manipulations}

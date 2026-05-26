@@ -3,7 +3,7 @@
 \name{fill_zeros}
 \alias{fill_zeros}
 \alias{fill_zeroes}
-\title{Fill Zeroes to Last Observation Carried Forward}
+\title{Replace all-zero XYZ values with last non-zero observation}
 \usage{
 fill_zeros(x)
 
@@ -14,8 +14,20 @@ fill_zeroes(x)
 with columns \code{X}/\code{Y}/\code{Z}}
 }
 \value{
-A similar object passed in with XYZ filled in with last observation
+A similar object passed in, where rows with \code{X == 0 & Y == 0 & Z == 0}
+have their XYZ values replaced by the last non-zero observation carried forward
 }
 \description{
-Fill Zeroes to Last Observation Carried Forward
+Replace all-zero XYZ values with last non-zero observation
+}
+\examples{
+df <- data.frame(
+  X = c(0, 1, 0, 2),
+  Y = c(0, 3, 0, 4),
+  Z = c(0, 5, 0, 6)
+)
+
+# Fill runs of all-zero rows using the last non-zero observation
+fill_zeros(df)
+
 }
