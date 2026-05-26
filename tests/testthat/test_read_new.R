@@ -140,11 +140,15 @@ testthat::test_that("read.gt3x disables imputing zeroes when using batching", {
 
 
 testthat::test_that("read.gt3x flag_idle_sleep works", {
+  gt3xfile <-
+    system.file(
+      "extdata", "TAS1H30182785_2019-09-17.gt3x",
+      package = "read.gt3x")
   data <- read.gt3x(gt3xfile, asDataFrame = TRUE, imputeZeroes=TRUE,
                     flag_idle_sleep = TRUE)
 
   testthat::expect_named(
-    colnames(data),
+    data,
     c("time", "X", "Y", "Z", "idle")
     )
   testthat::expect_true(
