@@ -54,5 +54,6 @@ download_or_skip = function(url, destfile, timeout = 300, ...) {
       !file.exists(destfile) || file.size(destfile) == 0) {
     testthat::skip("Test fixture unavailable without network access")
   }
+  attr(destfile, "res") = res
   destfile
 }

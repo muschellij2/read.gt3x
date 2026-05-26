@@ -5,6 +5,7 @@ testthat::test_that("Index out of bounds no longer an issue", {
   destfile = tempfile(fileext = ".gt3x.gz")
   res = download_or_skip("https://ndownloader.figshare.com/files/24349628",
                       destfile = destfile)
+  res = attr(res, "res")
   testthat::expect_equal(res, 0L)
   testthat::expect_silent({
     res = read.gt3x(destfile, imputeZeroes = TRUE, verbose = FALSE)
@@ -30,6 +31,7 @@ testthat::test_that("Negative Missing values fixed", {
   destfile = tempfile(fileext = ".gt3x.gz")
   res = download_or_skip("https://ndownloader.figshare.com/files/24319343",
                       destfile = destfile, quiet = FALSE)
+  res = attr(res, "res")
   testthat::expect_equal(res, 0L)
 
   testthat::expect_warning({
